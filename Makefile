@@ -6,7 +6,7 @@
 #    By: groy <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/04 13:54:50 by groy              #+#    #+#              #
-#    Updated: 2019/12/04 14:44:21 by groy             ###   ########.fr        #
+#    Updated: 2019/12/04 15:18:02 by groy             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS = ft_address.c \
 	   ft_put_nbr_u.c \
 	   ft_strlen.c \
 	   ft_hexa.c \
-	   ft_hexa_upper.c
+	   ft_hexa_upper.c \
+	   ft_printf.c
 
 OBJS = ${SRCS:.c=.o}
 
