@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2019/12/12 14:51:19 by groy             ###   ########.fr       */
+/*   Updated: 2019/12/12 18:06:32 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,27 @@ void	ft_sncf(char c, va_list args)
 
 int		ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int i;
+	va_list			args;
+	int				i;
 
 	va_start(args, format);
 	i = -1;
 	while (format[++i])
 	{
+		if (ft_isflag(format[i]) == 0)
+		{
+			ft_putchar(format[i]);
+		}
 		if (format[i] == '%')
 		{
 			if (format[i + 1] != '%')
 				ft_sncf(format[i + 1], args);
+			else
+			{
+				ft_putchar('%');
+				i++;
+			}
+			i++;
 		}
 	}
 	va_end(args);

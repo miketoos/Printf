@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 10:17:42 by groy              #+#    #+#             */
-/*   Updated: 2019/12/04 10:20:44 by groy             ###   ########.fr       */
+/*   Updated: 2019/12/12 17:29:34 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_putstr(const char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
+	{
+		ft_putchar(str[i]);
 		i++;
-	write(1, str, i);
+	}
 }

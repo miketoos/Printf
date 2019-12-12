@@ -6,7 +6,7 @@
 #    By: groy <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/04 13:54:50 by groy              #+#    #+#              #
-#    Updated: 2019/12/12 14:56:37 by groy             ###   ########.fr        #
+#    Updated: 2019/12/12 16:56:06 by groy             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS = func_p.c \
 	   ft_strlen.c \
 	   func_x.c \
 	   func_xx.c \
-	   ft_printf.c
+	   ft_printf.c \
+	   ft_isflag.c
 
 OBJS = ${SRCS:.c=.o}
 

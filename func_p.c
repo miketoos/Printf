@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 10:46:24 by groy              #+#    #+#             */
-/*   Updated: 2019/12/04 14:31:18 by groy             ###   ########.fr       */
+/*   Updated: 2019/12/12 16:39:28 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void				ft_putnbr_base(size_t nb, char *base)
 	}
 }
 
-void		kek(void *address)
+void				kek(void *address)
 {
 	ft_putstr("0x");
 	ft_putnbr_base((size_t)address, "0123456789abcdef");
