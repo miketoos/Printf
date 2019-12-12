@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2019/12/04 15:53:17 by groy             ###   ########.fr       */
+/*   Updated: 2019/12/12 14:51:19 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i] != '%')
+			if (format[i + 1] != '%')
 				ft_sncf(format[i + 1], args);
-			if (format[i] == '%')
-				ft_putchar('%');
 		}
 	}
 	va_end(args);
