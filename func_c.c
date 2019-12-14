@@ -6,16 +6,13 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:35:59 by groy              #+#    #+#             */
-/*   Updated: 2019/12/12 17:29:56 by groy             ###   ########.fr       */
+/*   Updated: 2019/12/14 16:12:24 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-void	ft_putchar(int c)
+void	func_c(t_list all, int c)
 {
-	char a;
-
-	a = (unsigned char)c;
-	write(1, &a, 1);
+	
 }
