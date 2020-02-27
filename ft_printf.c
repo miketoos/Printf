@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/02/27 11:33:55 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 11:53:42 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int		ft_format(const char *format, t_list *all)
 	int i;
 	int ret;
 
-	i = -1;
+	i = 0;
 	ret = 0;
-	while (format[++i])
+	while (format[i])
 	{
 		while (format[i] != '%' && format[i])
 		{
@@ -102,20 +102,6 @@ int		ft_printf(const char *format, ...)
 	*all = ft_tzero(*all);
 	va_start(args, format);
 	ft_format(format, all);
-/*	while (format[++i])
-	{
-		while (format[i] != '%' && format[i])
-		{
-	//		ft_putchar(format[i++]);
-			i++;
-		}
-		if (format[i] == '%' && format[i])
-		{
-			*all = ft_flag(&format[i], *all);
-			while (ft_isflag(format[i]) || ft_isconversion(format[i]))
-				i++;
-		}
-	}*/
 //	printf("%s", va_arg(args, const char*));
 	printf("conversion :%c\nzero :%d\nwidth :%d\nminus :%d\nwildcard :%d\npoint :%d", all->conversion , all->zero,all->width, all->minus, all->wildcard, all->point);
 	return (0);
