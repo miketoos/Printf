@@ -2,5 +2,5 @@
 
 int main()
 {
-	printf("%c", 42);
+	printf("%*c", 3, 54);
 }

@@ -5,15 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 09:35:59 by groy              #+#    #+#             */
-/*   Updated: 2020/02/27 09:40:51 by groy             ###   ########.fr       */
+/*   Created: 2019/12/14 11:52:49 by groy              #+#    #+#             */
+/*   Updated: 2020/02/27 14:28:45 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-void	func_c(t_list all, int c)
+int	func_c (int c, t_list *all)
 {
-	(void)all;
-	ft_putchar(c);
+	char a;
+
+	if (all->minus == 0)
+		ft_blank(all->width);
+	a = (unsigned char)c;
+	write(1, &a, 1);
+	if (all->minus == 1)
+		ft_blank(all->width);
+	return (all->width + 1);
 }
