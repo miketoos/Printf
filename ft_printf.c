@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/02/27 14:27:38 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 15:12:43 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int		ft_printf(const char *format, ...)
 	*all = ft_tzero(*all);
 	va_start(args, format);
 	ret += ft_format(format, all);
+	if (all->wildcard == 1)
+		all->width = va_arg(args, int);
 	if (all->conversion == 'c')
 		func_c(va_arg(args, int), all);
 //	printf("%s", va_arg(args, const char*));
