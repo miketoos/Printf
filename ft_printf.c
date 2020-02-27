@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/02/27 11:20:44 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 11:24:05 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,6 @@ t_list	ft_flag(const char *str, t_list all)
 remplit toutes les data de la structure
 */
 
-void	ft_all(t_list all, int data)
-{
-//	(void)all;
-//	(void)data;
-	if (all.conversion == 'c')
-//		printf("%c", (int)data);
-}
 
 int		ft_printf(const char *format, ...)
 {
@@ -99,7 +92,6 @@ int		ft_printf(const char *format, ...)
 			*all = ft_flag(&format[i], *all);
 			while (ft_isflag(format[i]) || ft_isconversion(format[i]))
 				i++;
-			ft_all(*all, va_arg(args, int));
 		}
 	}
 //	printf("%s", va_arg(args, const char*));
