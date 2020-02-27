@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2020/02/27 09:40:16 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 11:20:20 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				ft_isdigit(int c);
 int				ft_isconversion(int c);
 int				ft_issth(int c);
 size_t			ft_strlen(const char *s);
-void			ft_sncf(char c, va_list args);
+void			ft_all(t_list all, int data);
 void			kek(void *address);
 void			ft_putnbr_u(size_t nb);
 void			ft_putnbr_base(size_t nb, char *base);
