@@ -6,14 +6,15 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:13:27 by groy              #+#    #+#             */
-/*   Updated: 2019/12/14 16:08:11 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 10:34:27 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 #include <stdio.h>
 
-int main()
+int main(int ac, char **av)
 {
-	ft_printf("%*-.");
+	(void)ac;
+	ft_printf("%79*.0-x");
 }

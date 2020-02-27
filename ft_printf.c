@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2019/12/14 15:57:47 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 10:32:08 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 t_list	ft_tzero(t_list all)
 {
+	all.conversion = 0;
 	all.zero = 0;
 	all.width = 0;
 	all.minus = 0;
@@ -21,6 +22,10 @@ t_list	ft_tzero(t_list all)
 	all.point = 0;
 	return (all);
 }
+
+/*
+fonction qui met toutes les valeurs d'une structure a zero
+*/
 
 t_list	ft_flag(const char *str, t_list all)
 {
@@ -60,30 +65,15 @@ t_list	ft_flag(const char *str, t_list all)
 	return (all);
 }
 
-void	ft_sncf(char c, va_list args)
-{
-	if (c == 'c')
-		ft_putchar(va_arg(args, int));
-	if (c == 's')
-		ft_putstr(va_arg(args, const char*));
-	if (c == 'p')
-		kek(va_arg(args, void *));
-	if (c == 'd' || c == 'i')
-		ft_putnbr(va_arg(args, int));
-	if (c == 'u')
-		ft_putnbr_u(va_arg(args, size_t));
-	if (c == 'x')
-		ft_hexa(va_arg(args, size_t));
-	if (c == 'X')
-		ft_hexa_upper(va_arg(args, size_t));
-}
+/*
+remplit toutes les data de la structure
+*/
 
 int		ft_printf(const char *format, ...)
 {
 	va_list			args;
 	int				i;
 	t_list			*all;
-//	int	yes = 0;
 
 	all = malloc(sizeof(t_list));
 	*all = ft_tzero(*all);
@@ -91,13 +81,15 @@ int		ft_printf(const char *format, ...)
 	i = -1;
 	while (format[++i])
 	{
-		if (ft_isflag(format[i]) == 0)
+		while (format[i] != '%' && format[i])
 		{
-			ft_putchar(format[i]);
+			ft_putchar(format[i++]);
 		}
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i])
 		{
 			*all = ft_flag(&format[i], *all);
+			while (ft_isflag(format[i]) || ft_isconversion(format[i]))
+				i++;
 		}
 	}
 	printf("conversion :%c\nzero :%d\nwidth :%d\nminus :%d\nwildcard :%d\npoint :%d", all->conversion , all->zero,all->width, all->minus, all->wildcard, all->point);

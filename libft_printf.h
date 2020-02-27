@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2019/12/14 15:53:28 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/27 09:40:16 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void			ft_putnbr_u(size_t nb);
 void			ft_putnbr_base(size_t nb, char *base);
 void			ft_hexa_upper(size_t nb);
 void			ft_hexa(size_t nb);
-void			func_c(t_list all);
+void			func_c(t_list all, int c);
 void			ft_putchar(int c);
 void			ft_putstr(const char *str);
 void			ft_putnbr(int n);
