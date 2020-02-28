@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 11:20:33 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 13:47:55 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,16 @@ typedef	struct	s_list
 t_list			ft_tzero(t_list all);
 void			ft_blank(int n);
 void			ft_putchar(int c);
-int				ft_atoi(const char *str, int len);
+void			ft_putstr(const char *c);
+void			ft_putnbr(int n);
+void			ft_zero(int n);
+int				ft_atoi(const char *str);
 int				ft_printf(const char *format, ...);
 int				ft_isflag(int c);
 int				ft_isdigit(int c);
 int				ft_isconversion(int c);
 int				ft_issth(int c);
+int				ft_ilen(int n);
 size_t			ft_strlen(const char *s);
 void			ft_all(t_list all, int data);
 void			kek(void *address);
@@ -50,7 +54,5 @@ int				func_p(size_t nb, t_list *all);
 int				func_u(size_t nb, t_list *all);
 int				func_x(size_t nb, t_list *all);
 int				func_xx(size_t nb, t_list *all);
-void			ft_putstr(const char *c);
-void			ft_putnbr(int n);
 
 #endif

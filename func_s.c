@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:49 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 10:15:58 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 12:31:26 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,4 @@ int		func_s(const char *str,t_list *all)
 		i++;
 	}
 	return (0);
-}
-
-void	ft_putstr(const char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
 }
