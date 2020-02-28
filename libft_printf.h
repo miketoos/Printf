@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2020/02/27 13:44:49 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 10:10:55 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,14 @@ void			ft_all(t_list all, int data);
 void			kek(void *address);
 void			ft_putnbr_u(size_t nb);
 void			ft_putnbr_base(size_t nb, char *base);
-void			ft_hexa_upper(size_t nb);
-void			ft_hexa(size_t nb);
 int				func_c(int c, t_list *all);
+int				func_d(int n, t_list *all);
+int				func_i(int n, t_list *all);
+int				func_s(const char *str, t_list *all);
+int				func_p(size_t nb, t_list *all);
+int				func_u(size_t nb, t_list *all);
+int				func_x(size_t nb, t_list *all);
+int				func_xx(size_t nb, t_list *all);
 void			ft_putstr(const char *c);
 void			ft_putnbr(int n);
 

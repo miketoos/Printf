@@ -6,14 +6,15 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 13:16:42 by groy              #+#    #+#             */
-/*   Updated: 2019/12/04 14:43:50 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 10:04:31 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-void		ft_putnbr_u(size_t nb)
+int			func_u(size_t nb, t_list *all)
 {
+	(void)all;
 	if (nb <= 9)
 		ft_putchar(nb + '0');
 	else if (nb > 9)
@@ -21,4 +22,5 @@ void		ft_putnbr_u(size_t nb)
 		ft_putnbr_u(nb / 10);
 		ft_putnbr_u(nb % 10);
 	}
+	return (0);
 }

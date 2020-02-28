@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexa_upper.c                                    :+:      :+:    :+:   */
+/*   func_xx.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 14:23:41 by groy              #+#    #+#             */
-/*   Updated: 2019/12/04 14:45:27 by groy             ###   ########.fr       */
+/*   Created: 2020/02/28 10:16:20 by groy              #+#    #+#             */
+/*   Updated: 2020/02/28 10:16:23 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-void				ft_hexa_upper(size_t nb)
+int				func_xx(size_t nb, t_list *all)
 {
+	(void)all;
 	char *base;
 
 	base = "0123456789ABCDEF";
@@ -24,4 +25,5 @@ void				ft_hexa_upper(size_t nb)
 		ft_putnbr_base(nb / ft_strlen(base), base);
 		ft_putnbr_base(nb % ft_strlen(base), base);
 	}
+	return (0);
 }

@@ -1,1 +1,2 @@
 ternaire possible sur les appels aux fonctions dans int ft_printf, dans l'attribution de la valeur du retour
+le flag minus et 0 s'annulent et ne reste qiue la taille de champ , neanmoins l'affichage se fait a gauche
