@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 11:21:15 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 11:58:13 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,12 @@ int		ft_format(const char *format, t_list *all)
 		{
 			ft_putchar(format[i++]);
 			ret++;
+		}
+		if (format[i] == '%' && format [i + 1] == '%')
+		{
+			ft_putchar('%');
+			ret += 2;
+			i += 2;
 		}
 		if (format[i] == '%' && format[i])
 		{
