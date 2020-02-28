@@ -6,16 +6,15 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:13:27 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 09:36:11 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 11:23:21 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 #include <stdio.h>
 
-int main(int ac, char **av)
+int main()
 {
-	(void)ac;
-	ft_printf("%*c" , 11, 'o');
-	printf("\n%*c", 11,'o');
+	ft_printf("%*15c%c", 12, 'i', 'o');
+	printf("%*15c%c", 12, 'i', 'o');
 }

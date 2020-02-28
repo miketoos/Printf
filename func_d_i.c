@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:20 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 10:15:23 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 10:20:33 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		func_d(int n, t_list *all)
 		ft_putchar(nb + '0');
 	else if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		func_d(nb / 10, all);
+		func_d(nb % 10, all);
 	}
 	return (0);
 }
@@ -50,8 +50,8 @@ int		func_i(int n, t_list *all)
 		ft_putchar(nb + '0');
 	else if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		func_i(nb / 10, all);
+		func_i(nb % 10, all);
 	}
 	return (0);
 }
