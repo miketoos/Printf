@@ -1,52 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 12:06:57 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 14:11:05 by groy             ###   ########.fr       */
+/*   Created: 2019/11/05 09:29:37 by groy              #+#    #+#             */
+/*   Updated: 2019/11/25 20:48:51 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_printf.h"
+#include "libft.h"
 
-void	ft_putstr(const char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	while (*str)
-		ft_putchar(*str++);
-}
+	unsigned char		*str;
+	const unsigned char	*str2;
 
-void	ft_blank(int n)
-{
-	while(n-->0)
-		ft_putchar(' ');
-}
-
-void	ft_putchar(int c)
-{
-	char a;
-
-	a = (unsigned char)c;
-	write(1, &a, 1);
-}
-
-void	ft_zero(int n)
-{
-	while(n-->0)
-		ft_putchar('0');
-}
-
-int		ft_ilen(int n)
-{
-	int size;
-
-	size = 1;
-	while (n >= 10)
-	{
-		size++;
-		n /= 10;
-	}
-	return (size);
+	if (!dst && !src)
+		return (0);
+	str2 = src;
+	str = dst;
+	while (n-- > 0)
+		*str++ = *str2++;
+	return (dst);
 }

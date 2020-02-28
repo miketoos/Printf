@@ -1,52 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 12:06:57 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 14:11:05 by groy             ###   ########.fr       */
+/*   Created: 2020/02/28 14:24:14 by groy              #+#    #+#             */
+/*   Updated: 2020/02/28 14:51:40 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-void	ft_putstr(const char *str)
+char *ft_cut(char *str, size_t n)
 {
-	while (*str)
-		ft_putchar(*str++);
+	char *ret;
+
+	ret = malloc(n);
+	ret = ft_strncpy(ret, str, n);
+	return (ret);
 }
 
-void	ft_blank(int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	while(n-->0)
-		ft_putchar(' ');
-}
+	unsigned int i;
 
-void	ft_putchar(int c)
-{
-	char a;
-
-	a = (unsigned char)c;
-	write(1, &a, 1);
-}
-
-void	ft_zero(int n)
-{
-	while(n-->0)
-		ft_putchar('0');
-}
-
-int		ft_ilen(int n)
-{
-	int size;
-
-	size = 1;
-	while (n >= 10)
+	i = 0;
+	while (i < n && src[i])
 	{
-		size++;
-		n /= 10;
+		dest[i] = src[i];
+		i++;
 	}
-	return (size);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

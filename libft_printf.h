@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 13:47:55 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 14:45:55 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,12 @@ void			ft_putnbr_base(size_t nb, char *base);
 int				func_c(int c, t_list *all);
 int				func_d(int n, t_list *all);
 int				func_i(int n, t_list *all);
-int				func_s(const char *str, t_list *all);
+int				func_s(char *str, t_list *all);
 int				func_p(size_t nb, t_list *all);
 int				func_u(size_t nb, t_list *all);
 int				func_x(size_t nb, t_list *all);
 int				func_xx(size_t nb, t_list *all);
+char			*ft_cut(char *str, size_t n);
+char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
 #endif
