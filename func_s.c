@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:49 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 15:14:46 by groy             ###   ########.fr       */
+/*   Updated: 2020/02/28 15:30:45 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		func_s(char *str, t_list *all)
 		str = ft_cut(str, all->point);
 	if (all->minus && all->width)
 	{
-		while (tail-->0 && str[i])
+		while (tail-- > 0 && str[i])
 			ft_putchar(str[i++]);
 		if (tail > 0)
 			ft_blank(tail);
