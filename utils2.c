@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:24:14 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 11:33:19 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 12:48:52 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strdup(const char *s1)
 	return (dest);
 }
 
-char *ft_cut(char *str, int n)
+char	*ft_cut(char *str, int n)
 {
 	char *ret;
 	char *oui;

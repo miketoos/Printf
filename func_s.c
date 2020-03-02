@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:49 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 11:38:50 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 12:46:45 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int		func_s(char *str, t_list *all)
 {
 	int tail;
-	int i;
 
-	i = 0;
 	tail = all->width;
 	if (!str)
 		str = ft_strdup("(null)");

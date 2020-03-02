@@ -1,2 +1,3 @@
 pour %s le flag 0 n'est pas a gerer
 le flag minus et 0 s'annulent et ne reste qiue la taille de champ , neanmoins l'affichage se fait a gauche
+il semblerait que sur %d le flag precision fait afficher des 0 sur le nombre indiquee sur le blanc a l'inverse de width

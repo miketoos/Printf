@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 11:39:30 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 12:17:15 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,31 +29,20 @@ fonction qui met toutes les valeurs d'une structure a zero
 
 t_list	ft_flag(const char *str, t_list all)
 {
-	int 	i;
-	int		j;
+	int i;
 
-	j = 0;
 	i = 0;
 	while (ft_isconversion(str[i++]) == 0)
 	{
-		if (str[i] == '0')
-			all.zero = 1;
-		if (str[i] == '-')
-			all.minus = 1;
-		if (str[i] == '*')
-			all.wildcard = 1;
-//		printf("%d", i);
-//		getchar();
+		all.zero = str[i] == '0' ? 1 : all.zero;
+		all.minus = str[i] == '-' ? 1 : all.minus;
+		all.wildcard = str[i] == '*' ? 1 : all.wildcard;
 		if (str[i] == '.')
 		{
 			while (str[i + 1] == '0')
 				i++;
 			all.point = ft_atoi(&str[++i]);
-			if (all.point != -1)
-				i += ft_ilen(all.point);
-	//		printf("%s", &str[i]);
-//			printf("%d", i);
-//			printf("%d", all.point);
+			i += ft_ilen(all.point);
 		}
 		if (ft_isdigit(str[i]) && all.width == 0)
 		{
@@ -61,10 +50,7 @@ t_list	ft_flag(const char *str, t_list all)
 			i += ft_ilen(all.width) - 1;
 		}
 		if (ft_isconversion(str[i]) == 1 && !(all.conversion))
-		{
 			all.conversion = str[i];
-			break ;
-		}
 	}
 	return (all);
 }
@@ -76,22 +62,16 @@ remplit toutes les data de la structure
 int		ft_format(const char *format, t_list *all)
 {
 	int i;
-	int ret;
 
 	*all = ft_tzero(*all);
 	i = 0;
-	ret = 0;
 	while (format[i])
 	{
 		while (format[i] != '%' && format[i])
-		{
 			ft_putchar(format[i++]);
-			ret++;
-		}
-		if (format[i] == '%' && format [i + 1] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			ft_putchar('%');
-			ret += 2;
 			i += 2;
 		}
 		if (format[i] == '%' && format[i])
@@ -99,11 +79,8 @@ int		ft_format(const char *format, t_list *all)
 			*all = ft_flag(&format[i], *all);
 			while (ft_isflag(format[i]) && !(ft_isconversion(format[i])))
 				i++;
-			if (ft_isconversion(format[i]))
-			{
-				i++;
+			if (ft_isconversion(format[i++]))
 				break ;
-			}
 		}
 	}
 	return (i);
@@ -112,14 +89,13 @@ int		ft_format(const char *format, t_list *all)
 int		ft_printf(const char *format, ...)
 {
 	size_t				current;
-	int 			ret;
-	va_list			args;
-	t_list			*all;
+	int					ret;
+	va_list				args;
+	t_list				*all;
 
 	current = 0;
 	ret = 0;
 	all = malloc(sizeof(t_list));
-	*all = ft_tzero(*all);
 	va_start(args, format);
 	while (current != ft_strlen(format))
 	{
@@ -134,7 +110,7 @@ int		ft_printf(const char *format, ...)
 		ret += all->conversion == 'p' ? func_p(va_arg(args, size_t), all) : 0;
 		ret += all->conversion == 'u' ? func_u(va_arg(args, size_t), all) : 0;
 		ret += all->conversion == 'x' ? func_x(va_arg(args, size_t), all) : 0;
-		ret += all->conversion == 'X' ? func_xx(va_arg(args , size_t), all) : 0;
+		ret += all->conversion == 'X' ? func_xx(va_arg(args, size_t), all) : 0;
 //		getchar();
 	}
 //	printf("%s", va_arg(args, const char*));

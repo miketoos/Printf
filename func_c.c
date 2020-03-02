@@ -6,13 +6,13 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:05 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 10:15:11 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 12:45:37 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_printf.h"
 
-int	func_c (int c, t_list *all)
+int	func_c(int c, t_list *all)
 {
 	char a;
 

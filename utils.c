@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 12:06:57 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 11:12:17 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 12:47:57 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putstr(const char *str)
 
 void	ft_blank(int n)
 {
-	while(n-->0)
+	while (n-- > 0)
 		ft_putchar(' ');
 }
 
@@ -39,7 +39,7 @@ void	ft_putchar(int c)
 
 void	ft_zero(int n)
 {
-	while(n-->0)
+	while (n-- > 0)
 		ft_putchar('0');
 }
 
@@ -48,6 +48,8 @@ int		ft_ilen(int n)
 	int size;
 
 	size = 1;
+	if (n == -1)
+		return (0);
 	while (n >= 10)
 	{
 		size++;
