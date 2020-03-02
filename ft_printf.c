@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 15:30:47 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 10:24:34 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ t_list	ft_flag(const char *str, t_list all)
 	i = 0;
 	while (ft_isconversion(str[i++]) == 0)
 	{
-		if (ft_isconversion(str[i]) == 1 && !(all.conversion))
-			all.conversion = str[i];
-		if (str[i] == '0')
+			if (str[i] == '0')
 			all.zero = 1;
 		if (str[i] == '-')
 			all.minus = 1;
@@ -47,13 +45,15 @@ t_list	ft_flag(const char *str, t_list all)
 		if (str[i] == '.')
 		{
 			all.point = ft_atoi(&str[++i]);
-			i += ft_ilen(all.point) - 1;
+			i += ft_ilen(all.point);
 		}
 		if (ft_isdigit(str[i]) && all.width == 0)
 		{
 			all.width = ft_atoi(&str[i]);
 			i += ft_ilen(all.width) - 1;
 		}
+		if (ft_isconversion(str[i]) == 1 && !(all.conversion))
+			all.conversion = str[i];
 	}
 	return (all);
 }

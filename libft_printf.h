@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 14:45:55 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 10:23:03 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef	struct	s_list
 {
 	char	conversion;
 	int		zero;
-	int		width;
+	size_t		width;
 	int		minus;
 	int		wildcard;
 	int		point;
