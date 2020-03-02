@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 12:06:57 by groy              #+#    #+#             */
-/*   Updated: 2020/02/28 14:11:05 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 11:12:17 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_putstr(const char *str)
 {
+	if (!str)
+	{
+		ft_putstr("(null)");
+		return ;
+	}
 	while (*str)
 		ft_putchar(*str++);
 }

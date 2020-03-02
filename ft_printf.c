@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:28:39 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 10:24:34 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 11:39:30 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,24 @@ t_list	ft_flag(const char *str, t_list all)
 	i = 0;
 	while (ft_isconversion(str[i++]) == 0)
 	{
-			if (str[i] == '0')
+		if (str[i] == '0')
 			all.zero = 1;
 		if (str[i] == '-')
 			all.minus = 1;
 		if (str[i] == '*')
 			all.wildcard = 1;
+//		printf("%d", i);
+//		getchar();
 		if (str[i] == '.')
 		{
+			while (str[i + 1] == '0')
+				i++;
 			all.point = ft_atoi(&str[++i]);
-			i += ft_ilen(all.point);
+			if (all.point != -1)
+				i += ft_ilen(all.point);
+	//		printf("%s", &str[i]);
+//			printf("%d", i);
+//			printf("%d", all.point);
 		}
 		if (ft_isdigit(str[i]) && all.width == 0)
 		{
@@ -53,7 +61,10 @@ t_list	ft_flag(const char *str, t_list all)
 			i += ft_ilen(all.width) - 1;
 		}
 		if (ft_isconversion(str[i]) == 1 && !(all.conversion))
+		{
 			all.conversion = str[i];
+			break ;
+		}
 	}
 	return (all);
 }
@@ -87,10 +98,7 @@ int		ft_format(const char *format, t_list *all)
 		{
 			*all = ft_flag(&format[i], *all);
 			while (ft_isflag(format[i]) && !(ft_isconversion(format[i])))
-			{
-		//		printf("%d", i);
 				i++;
-			}
 			if (ft_isconversion(format[i]))
 			{
 				i++;
@@ -118,7 +126,7 @@ int		ft_printf(const char *format, ...)
 		current += ft_format(&format[current], all);
 		if (all->wildcard == 1)
 			all->width = va_arg(args, int);
-	//printf("conversion :%c\nzero :%d\nwidth :%d\nminus :%d\nwildcard :%d\npoint :%d", all->conversion , all->zero,all->width, all->minus, all->wildcard, all->point);
+//	printf("conversion :%c\nzero :%d\nwidth :%zu\nminus :%d\nwildcard :%d\npoint :%d", all->conversion , all->zero,all->width, all->minus, all->wildcard, all->point);
 		ret += all->conversion == 'c' ? func_c(va_arg(args, int), all) : 0;
 		ret += all->conversion == 's' ? func_s(va_arg(args, char *), all) : 0;
 		ret += all->conversion == 'd' ? func_d(va_arg(args, int), all) : 0;

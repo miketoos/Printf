@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:49 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 10:23:40 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 11:38:50 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		func_s(char *str, t_list *all)
 
 	i = 0;
 	tail = all->width;
+	if (!str)
+		str = ft_strdup("(null)");
 	if (all->point)
 		str = ft_cut(str, all->point);
 	if (all->minus && all->width)

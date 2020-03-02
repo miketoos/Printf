@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 09:37:53 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 10:23:03 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 10:59:54 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int				func_p(size_t nb, t_list *all);
 int				func_u(size_t nb, t_list *all);
 int				func_x(size_t nb, t_list *all);
 int				func_xx(size_t nb, t_list *all);
-char			*ft_cut(char *str, size_t n);
+char			*ft_strdup(const char *s1);
+char			*ft_cut(char *str, int n);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
 #endif
