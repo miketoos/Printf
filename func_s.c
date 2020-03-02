@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:15:49 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 12:46:45 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 16:00:09 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int		func_s(char *str, t_list *all)
 			ft_blank(tail);
 		if (all->width > ft_strlen(str))
 			return (all->width);
-		return (ft_strlen(str));
+		printf("%zu", ft_strlen(str));
 	}
 	else if (!(all->minus) && all->width)
 	{
 		ft_blank(tail - ft_strlen(str));
 		ft_putstr(str);
-		return (all->width);
+		return (ft_max(0, all->width, ft_strlen(str)));
 	}
 	ft_putstr(str);
 	return (ft_strlen(str));

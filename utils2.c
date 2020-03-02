@@ -6,7 +6,7 @@
 /*   By: groy <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:24:14 by groy              #+#    #+#             */
-/*   Updated: 2020/03/02 12:48:52 by groy             ###   ########.fr       */
+/*   Updated: 2020/03/02 14:33:26 by groy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,13 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		i++;
 	}
 	return (dest);
+}
+
+int		ft_max(int n, int nb, int nbr)
+{
+	if (n >= nb && n >= nbr)
+		return (n);
+	if (nb >= n && nb >= nbr)
+		return (nb);
+	return (nbr);
 }
